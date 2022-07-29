@@ -2,7 +2,7 @@
 escucharElCheck = function(tareas){
     const tareasFinalizadas = document.querySelector("#tareas-terminadas");
     for (let tarea of tareas){
-        console.log(tarea.id)
+        //console.log(tarea.id)
      const btnCheck = document.getElementById(tarea.id);
      btnCheck.addEventListener("click", () => {
         if(tarea.check == 0){
@@ -11,8 +11,8 @@ escucharElCheck = function(tareas){
         else{
             tarea.check = 0;
         }
-        console.log(tarea.check,tarea.id); 
-        console.log(sumaCheck(tareas));
+        //console.log(tarea.check,tarea.id); 
+        //console.log(sumaCheck(tareas));
         tareasFinalizadas.innerHTML = sumaCheck(tareas);
      })
     }
@@ -31,7 +31,7 @@ function renderTareas(tareas){
         if(tarea.check==1){
     html1 += `<li style="text-align: end; list-style-type: none;">${tarea.nombre} 
     <input checked type="checkbox" class="btnCheck" id="${tarea.id}">
-    <button onclick="borrar(${tarea.id})" style="color: red;"> x </button> </li>`;
+    <button onclick="borrar(${tarea.id})" style="color: red;"> X </button> </li>`;
     }
     else{
     html1 += `<li style="text-align: end; list-style-type: none;">${tarea.nombre} 
@@ -52,7 +52,7 @@ function renderTareas(tareas){
 function borrar(id){
     const index = tareas.findIndex((ele) => ele.id == id)
     tareas.splice(index, 1)
-    console.log(tareas)
+    //console.log(tareas)
     renderTareas(tareas)
     escucharElCheck(tareas)
     }
@@ -61,7 +61,7 @@ const btnAgregar = document.querySelector("#agregarTarea");
 const tareas = [{id: Date.now()-1659100000000, nombre: "Hacer las compras", check: 0},
     {id: Date.now()+1-1659100000000, nombre: "Lavar ropa", check: 0},
     {id: Date.now()+2-1659100000000, nombre: "Limpiar la casa", check: 0}]
-console.log(tareas);   
+//console.log(tareas);   
 renderTareas(tareas);
 escucharElCheck(tareas); 
   
@@ -70,7 +70,7 @@ escucharElCheck(tareas);
 btnAgregar.addEventListener("click", () => {
     const tareaInput = document.querySelector("#nuevaTarea");
 // Validación del input
-console.log(tareaInput)
+//console.log(tareaInput)
 if (tareaInput.value===""){
     alert("Debe ingresar texto")
 }

@@ -1,0 +1,26 @@
+.mainbox{
+    
+    background-color: lightgrey;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display:flex; 
+    flex-direction:row-reverse; 
+    justify-content:space-around;
+}
+.input{
+    margin: 50px;
+    text-align: center;
+}
+#nuevaTarea{
+    width: 300px;
+}
+h1{
+    text-align: center;
+}
+#agregarTarea{
+    background-color: green;
+    color: white;
+}
